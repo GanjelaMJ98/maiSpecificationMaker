@@ -1,0 +1,20 @@
+{
+	"whitelist":
+	[
+		{
+			"login":"Pavel",
+			"password": "12345",
+			"status": "a"
+		},
+        {
+            "login":"Vlad",
+			"password": "qwerty",
+			"status": "o"
+        },
+        {
+            "login":"Pavel",
+			"password": "lol69",
+			"status": "m"
+        }
+	]
+}
