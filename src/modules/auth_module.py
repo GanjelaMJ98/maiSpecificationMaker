@@ -19,7 +19,11 @@ log_path = None                                     # Путь до журнал
 user_name = None                                    # Имя пользователя/Login
 user_status = None                                  # Флаг привилегии
 
-def authentication(path_config = "config.json", path_log = "auth.log"):
+def authentication(path_config = "config.json", path_log = "auth.log", test = None):
+
+    if test is not None:
+        return "Pavel", "Test"
+
     global user_name
     global user_status
     global log_path
