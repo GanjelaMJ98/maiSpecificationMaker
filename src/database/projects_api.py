@@ -3,6 +3,11 @@ import sqlite3
 conn = sqlite3.connect('Specifications.sqlite')
 cursor = conn.cursor()
 
+def getProjectID(project_name):
+    sql = "SELECT id FROM Projects_t WHERE project_name = '{0}'".format(project_name)
+    for ans in cursor.execute(sql):
+        return ans[0]
+        #TODO: Добавить проверку на Null
 
 def addProject(project_name):
     n = False
@@ -19,9 +24,18 @@ def addProject(project_name):
         conn.commit()
         return 0
 
+def updateProject(project_id, project_name):
+    sql = "UPDATE Projects_t SET project_name = {0} WHERE project_id = {1}".format(
+            project_name, project_id)
+    cursor.execute(sql)
+    conn.commit()
+    return 0
+
+
 def test():
     addProject("Airplane")
     addProject("Building")
+    print(getProjectID("Airplane"))
 
 
 
