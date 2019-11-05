@@ -1,2 +1,4 @@
 /src/database/Specifications.sqlite
 /src/database/__pycache__
+src/GUI/forms/__pycache__
+src/GUI/__pycache__/

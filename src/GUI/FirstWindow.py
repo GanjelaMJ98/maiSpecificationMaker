@@ -1,3 +1,4 @@
+
 from .forms import FirstWindowForm
 from PyQt5 import QtWidgets
 import sys
@@ -8,9 +9,9 @@ class FirstWindowApp(QtWidgets.QMainWindow, FirstWindowForm.Ui_MainWindow):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
-        self.StartCreate_but.clicked.connect(self.on_clicked)
-        self.StartUpdate_but.clicked.connect(self.on_clicked)
-        self.StartPrint_but.clicked.connect(self.on_clicked)
+        self.StartCreateButton.clicked.connect(self.on_clicked)
+        self.StartUpdateButton.clicked.connect(self.on_clicked)
+        self.StartPrintButton.clicked.connect(self.on_clicked)
 
     def on_clicked(self):
         global answer

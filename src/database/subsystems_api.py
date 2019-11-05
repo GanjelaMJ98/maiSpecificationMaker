@@ -2,10 +2,10 @@ import sqlite3
 from projects_api import addProject
 from systems_api import getSystemID
 from products_api import getProductID
-
-
-
-conn = sqlite3.connect('Specifications.sqlite')
+import os.path
+BASE_DIR = os.path.dirname(os.path.abspath("../"))
+db_path = os.path.join(BASE_DIR, "Specifications.sqlite")
+conn = sqlite3.connect(db_path)
 cursor = conn.cursor()
 
 def getProductSUM(product_id):

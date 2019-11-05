@@ -1,6 +1,9 @@
+# -*- coding: utf8 -*-
 import sqlite3
-
-conn = sqlite3.connect('Specifications.sqlite')
+import os.path
+BASE_DIR = os.path.dirname(os.path.abspath(".."))
+db_path = os.path.join(BASE_DIR, "Specifications.sqlite")
+conn = sqlite3.connect(db_path)
 cursor = conn.cursor()
 
 def getProjectID(project_name):
@@ -18,11 +21,11 @@ def addProject(project_name):
         cursor.execute("INSERT INTO Projects_t VALUES (NULL,?) ", [project_name] )
         print("Added project ", project_name)
         conn.commit()
-        return 1
+        return "Added project "+ project_name
     else:
         print("Project already exists")
         conn.commit()
-        return 0
+        return "Project already exists"
 
 def updateProject(project_id, project_name):
     sql = "UPDATE Projects_t SET project_name = {0} WHERE project_id = {1}".format(
@@ -32,12 +35,11 @@ def updateProject(project_id, project_name):
     return 0
 
 
-def test():
-    addProject("Airplane")
-    addProject("Building")
-    print(getProjectID("Airplane"))
+
 
 
 
 if __name__ == "__main__":
-   test()
+    addProject("Airplane")
+    addProject("Building")
+    print(getProjectID("Airplane"))
