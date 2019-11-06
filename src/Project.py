@@ -3,10 +3,10 @@ import sys
 from forms.CreateProjectForm import Ui_MainWindow
 from PyQt5 import QtWidgets
 from database import projects_api
-
+import time as t
 answer = None
 
-class CreateProjectApp(QtWidgets.QMainWindow, Ui_MainWindow):
+class ProjectApp(QtWidgets.QMainWindow, Ui_MainWindow):
     textProjectName = list()
     currentProjectName = None
 
@@ -23,6 +23,7 @@ class CreateProjectApp(QtWidgets.QMainWindow, Ui_MainWindow):
         else:
             db_ans = projects_api.addProject(self.currentProjectName)
             self.Error_lable.setText(db_ans)
+            t.sleep(1)
             self.close()
 
     def on_clicked_back(self):
@@ -35,15 +36,15 @@ class CreateProjectApp(QtWidgets.QMainWindow, Ui_MainWindow):
 
 
 
-def CreateProject():
+def Project():
     app = QtWidgets.QApplication(sys.argv)  # Новый экземпляр QApplication
-    window = CreateProjectApp()  # Создаём объект класса FirstWindowApp
+    window = ProjectApp()  # Создаём объект класса FirstWindowApp
     window.show()  # Показываем окно
     app.exec_()  # и запускаем приложение
 
 
 def main():
-    print(CreateProject())
+    print(Project())
 
 if __name__ == "__main__":
    main()

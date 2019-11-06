@@ -3,7 +3,7 @@ from projects_api import addProject
 from systems_api import getSystemID
 from products_api import getProductID
 
-conn = sqlite3.connect("Specifications.sqlite")
+conn = sqlite3.connect("D:\Code\Git\maiSpecificationMaker\Specifications.sqlite")
 cursor = conn.cursor()
 def getProductSUM(product_id):
     sql = "SELECT sum FROM Subsystems_t WHERE product_id = '{0}'".format(product_id)

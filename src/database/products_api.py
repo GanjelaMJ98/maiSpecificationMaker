@@ -2,7 +2,7 @@ import sqlite3
 from projects_api import addProject
 import sqlite3
 
-conn = sqlite3.connect("Specifications.sqlite")
+conn = sqlite3.connect("D:\Code\Git\maiSpecificationMaker\Specifications.sqlite")
 cursor = conn.cursor()
 
 def getProductID(product_name):

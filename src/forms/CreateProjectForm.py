@@ -1,5 +1,10 @@
 # -*- coding: utf-8 -*-
 
+# Form implementation generated from reading ui file 'CreateProjectForm.ui'
+#
+# Created by: PyQt5 UI code generator 5.11.2
+#
+# WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
@@ -12,9 +17,9 @@ class Ui_MainWindow(object):
         self.Project_name_text = QtWidgets.QLineEdit(self.centralwidget)
         self.Project_name_text.setGeometry(QtCore.QRect(70, 90, 151, 21))
         self.Project_name_text.setObjectName("Project_name_text")
-        self.CreateButton = QtWidgets.QPushButton(self.centralwidget)
-        self.CreateButton.setGeometry(QtCore.QRect(250, 150, 75, 23))
-        self.CreateButton.setObjectName("Create_Button")
+        self.Create_Button = QtWidgets.QPushButton(self.centralwidget)
+        self.Create_Button.setGeometry(QtCore.QRect(250, 150, 75, 23))
+        self.Create_Button.setObjectName("Create_Button")
         self.H1 = QtWidgets.QLabel(self.centralwidget)
         self.H1.setGeometry(QtCore.QRect(100, 10, 171, 41))
         font = QtGui.QFont()
@@ -24,9 +29,9 @@ class Ui_MainWindow(object):
         self.H2 = QtWidgets.QLabel(self.centralwidget)
         self.H2.setGeometry(QtCore.QRect(70, 70, 71, 20))
         self.H2.setObjectName("H2")
-        self.BackButton = QtWidgets.QPushButton(self.centralwidget)
-        self.BackButton.setGeometry(QtCore.QRect(160, 150, 75, 23))
-        self.BackButton.setObjectName("Back_Button")
+        self.Back_Button = QtWidgets.QPushButton(self.centralwidget)
+        self.Back_Button.setGeometry(QtCore.QRect(160, 150, 75, 23))
+        self.Back_Button.setObjectName("Back_Button")
         self.Error_lable = QtWidgets.QLabel(self.centralwidget)
         self.Error_lable.setGeometry(QtCore.QRect(10, 180, 311, 21))
         self.Error_lable.setText("")
@@ -39,8 +44,8 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.CreateButton.setText(_translate("MainWindow", "Create"))
+        self.Create_Button.setText(_translate("MainWindow", "Create"))
         self.H1.setText(_translate("MainWindow", "Create Project"))
         self.H2.setText(_translate("MainWindow", "Project Name"))
-        self.BackButton.setText(_translate("MainWindow", "Back"))
+        self.Back_Button.setText(_translate("MainWindow", "Back"))
 
