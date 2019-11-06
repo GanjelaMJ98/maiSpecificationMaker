@@ -1,5 +1,5 @@
 
-from .forms import FirstWindowForm
+from forms import FirstWindowForm
 from PyQt5 import QtWidgets
 import sys
 answer = None

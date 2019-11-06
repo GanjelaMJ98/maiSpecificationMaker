@@ -2,12 +2,9 @@ import sqlite3
 from projects_api import addProject
 from systems_api import getSystemID
 from products_api import getProductID
-import os.path
-BASE_DIR = os.path.dirname(os.path.abspath("../"))
-db_path = os.path.join(BASE_DIR, "Specifications.sqlite")
-conn = sqlite3.connect(db_path)
-cursor = conn.cursor()
 
+conn = sqlite3.connect("Specifications.sqlite")
+cursor = conn.cursor()
 def getProductSUM(product_id):
     sql = "SELECT sum FROM Subsystems_t WHERE product_id = '{0}'".format(product_id)
     for ans in cursor.execute(sql):

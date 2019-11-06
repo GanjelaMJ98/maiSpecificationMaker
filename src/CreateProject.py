@@ -1,16 +1,12 @@
 # -*- coding: utf8 -*-
 import sys
-sys.path.append('..')
-
-
-from forms import CreateProjectForm
+from forms.CreateProjectForm import Ui_MainWindow
 from PyQt5 import QtWidgets
-
 from database import projects_api
 
 answer = None
 
-class CreateProjectApp(QtWidgets.QMainWindow, CreateProjectForm.Ui_MainWindow):
+class CreateProjectApp(QtWidgets.QMainWindow, Ui_MainWindow):
     textProjectName = list()
     currentProjectName = None
 

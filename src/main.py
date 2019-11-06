@@ -1,8 +1,10 @@
+# -*- coding: utf8 -*-
 import sys
+sys.path.insert(1, 'D:\старый комп\со старого компьютера\Документы\Паша\МАИ\4 курс\Максимов\maiSpecificationMaker')
 sys.path.append('../GUI/forms')
 from modules.auth_module import authentication
-from GUI.FirstWindow import FirstWindow
-from GUI.CreateProject import CreateProject
+from FirstWindow import FirstWindow
+from CreateProject import CreateProject
 
 def main():
     print("Start")

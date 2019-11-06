@@ -1,10 +1,7 @@
 # -*- coding: utf8 -*-
 import sqlite3
-import os.path
-BASE_DIR = os.path.dirname(os.path.abspath(".."))
 
-db_path = os.path.join(BASE_DIR, "Specifications.sqlite")
-conn = sqlite3.connect(db_path)
+conn = sqlite3.connect("../Specifications.sqlite")
 cursor = conn.cursor()
 
 

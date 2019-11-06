@@ -1,9 +1,8 @@
 import sqlite3
 from projects_api import addProject, getProjectID
-import os.path
-BASE_DIR = os.path.dirname(os.path.abspath("../"))
-db_path = os.path.join(BASE_DIR, "Specifications.sqlite")
-conn = sqlite3.connect(db_path)
+
+
+conn = sqlite3.connect("Specifications.sqlite")
 cursor = conn.cursor()
 
 def getSystemID(system_name):
