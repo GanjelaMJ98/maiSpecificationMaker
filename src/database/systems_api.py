@@ -43,15 +43,15 @@ def updateSystem(system_id, system_name,project_name = None):
     return 0
 
 
-def loadSystem():
+def loadSystem(project = None):
     list = []
-    sql = '''SELECT s.id,
-                    s.system_name,
-                    p.project_name
-                    FROM Projects_t p NATURAL JOIN Systems_t s '''
-    for row in cursor.execute(sql):
-        list.append(row)
-    print(list)
+    if project is not None:
+        sql = "SELECT id, system_name FROM Systems_t WHERE project_id = '{0}'".format(project)
+    else:
+        sql = "SELECT id, system_name FROM Systems_t"
+    #for row in cursor.execute(sql):
+        #list.append(row)
+    #print(list)
     return sql
 
 if __name__ == "__main__":

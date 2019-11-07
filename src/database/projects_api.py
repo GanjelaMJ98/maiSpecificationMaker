@@ -32,7 +32,16 @@ def updateProject(project_id, project_name):
     conn.commit()
     return 0
 
-
+def loadProjects(name = None):
+    list = []
+    if name is not None:
+        sql = "SELECT * FROM Projects_t WHERE project_name ='{0}'".format(name)
+    else:
+        sql = "SELECT * FROM Projects_t"
+    #for row in cursor.execute(sql):
+        #list.append(row)
+    #print(list)
+    return sql
 
 
 
@@ -41,3 +50,4 @@ if __name__ == "__main__":
     addProject("Airplane")
     addProject("Building")
     print(getProjectID("Airplane"))
+    loadProject("Airplane")

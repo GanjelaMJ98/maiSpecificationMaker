@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>937</width>
+    <height>563</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTableWidget" name="Table">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>118</y>
+      <width>841</width>
+      <height>411</height>
+     </rect>
+    </property>
+    <property name="rowCount">
+     <number>15</number>
+    </property>
+    <property name="columnCount">
+     <number>8</number>
+    </property>
+    <row/>
+    <row/>
+    <row/>
+    <row/>
+    <row/>
+    <row/>
+    <row/>
+    <row/>
+    <row/>
+    <row/>
+    <row/>
+    <row/>
+    <row/>
+    <row/>
+    <row/>
+    <column>
+     <property name="text">
+      <string>Code</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Product</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Number</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Contractor</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Price</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Fabricator</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Currency</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Delivery</string>
+     </property>
+    </column>
+   </widget>
+   <widget class="QPushButton" name="LoadDB_but">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>78</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Load DB</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Search_but">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>78</y>
+      <width>151</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Search</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Add_but">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>78</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ADD</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Delete_but">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>78</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>DELETE</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Update_but">
+    <property name="geometry">
+     <rect>
+      <x>760</x>
+      <y>78</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>UPDATE</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="ID_t">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>78</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="id_l">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>80</y>
+      <width>16</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ID</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
