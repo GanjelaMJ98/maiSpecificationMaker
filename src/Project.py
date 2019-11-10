@@ -86,10 +86,18 @@ def Project():
     window = ProjectApp()  # Создаём объект класса FirstWindowApp
     window.show()  # Показываем окно
     app.exec_()  # и запускаем приложение
-    if answer == "back":
-        return(answer)
-    else:
-        System(answer)
+    window.close()
+    #if answer == "back":
+        #return(answer)
+    #else:
+
+    rez = System(answer)
+
+    print("System answer " + str(rez))
+    app.quit()
+    return rez
+
+
 
 def main():
     print(Project())

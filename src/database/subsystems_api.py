@@ -35,6 +35,6 @@ def addSubsystem(system_name, product_name, product_sum):
 
 
 
-
 if __name__ == "__main__":
-    addSubsystem("test_system","test_product",5);
+    #addSubsystem("test_system","test_product",5);
+    loadSubsystem(1)

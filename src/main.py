@@ -9,16 +9,13 @@ from System import System
 
 def main():
     print("Start")
-    name, status = authentication()
+    name, status = authentication(test = 1)
     print("User: " + str(name) + " with status " +str(status))
-    start = FirstWindow()
-    print(str(name) + " selected " + str(start))
-    if(start == "Create"):
-        if(Project() == "back"):
-            main()
-        else:
-            print("lol " + s)
-
+    while(1):
+        rez = Project()
+        print("Project answer = " + str(rez))
+        if rez == "stop":
+            break
 
 
 if __name__ == "__main__":

@@ -7,14 +7,14 @@
     <x>0</x>
     <y>0</y>
     <width>937</width>
-    <height>563</height>
+    <height>617</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTableWidget" name="Table">
+   <widget class="QTableWidget" name="table">
     <property name="geometry">
      <rect>
       <x>40</x>
@@ -56,17 +56,17 @@
     </column>
     <column>
      <property name="text">
+      <string>Price</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
       <string>Number</string>
      </property>
     </column>
     <column>
      <property name="text">
       <string>Contractor</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>Price</string>
      </property>
     </column>
     <column>
@@ -171,6 +171,19 @@
     </property>
     <property name="text">
      <string>ID</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Back_but">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>560</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Back</string>
     </property>
    </widget>
   </widget>
