@@ -5,6 +5,12 @@ from .projects_api import addProject, getProjectID
 conn = sqlite3.connect("D:\Code\Git\maiSpecificationMaker\Specifications.sqlite")
 cursor = conn.cursor()
 
+def getSystemName(system_id):
+    sql = "SELECT system_name FROM Systems_t WHERE id = '{0}'".format(system_id)
+    for ans in cursor.execute(sql):
+        return ans[0]
+    #TODO: Добавить проверку на Null
+
 def getSystemID(system_name):
     sql = "SELECT id FROM Systems_t WHERE system_name = '{0}'".format(system_name)
     for ans in cursor.execute(sql):

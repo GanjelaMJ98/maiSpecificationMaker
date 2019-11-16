@@ -46,7 +46,7 @@ def loadProduct(system = None):
     subsystem_sql = loadSubsystem(system)
     for row in cursor.execute(subsystem_sql):
         subsystem_list.append(row)
-    print(subsystem_list)
+    #print(subsystem_list)
     for row in subsystem_list:
         sql = "SELECT * FROM Products_t WHERE id = '{0}'".format(row[2])
         project_id = row[3]

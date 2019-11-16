@@ -3,6 +3,9 @@ import sqlite3
 from forms.ProductForm import Ui_MainWindow
 from PyQt5 import QtWidgets
 from database import products_api
+from database.projects_api import getProjectName
+from database.systems_api import getSystemName
+from modules.print_module import print_specification
 conn = sqlite3.connect("D:\Code\Git\maiSpecificationMaker\Specifications.sqlite")
 cursor = conn.cursor()
 answer = None
@@ -39,10 +42,8 @@ class ProductApp(QtWidgets.QMainWindow, Ui_MainWindow):
         self.close()
 
     def print_docx(self):
-        res, sys, proj = products_api.loadProduct(self.SystemID)
-        print(res)
-        print(sys)
-        print(proj)
+        table_product, system_id, project_id = products_api.loadProduct(self.SystemID)
+        print_specification(getProjectName(project_id),getSystemName(system_id),table_product)
 
 def Product(SystemIndex = None):
     app = QtWidgets.QApplication(sys.argv)  # Новый экземпляр QApplication

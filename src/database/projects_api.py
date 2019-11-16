@@ -4,6 +4,12 @@ import sqlite3
 conn = sqlite3.connect("D:\Code\Git\maiSpecificationMaker\Specifications.sqlite")
 cursor = conn.cursor()
 
+def getProjectName(project_id):
+    sql = "SELECT project_name FROM Projects_t WHERE id = '{0}'".format(project_id)
+    for ans in cursor.execute(sql):
+        return ans[0]
+        #TODO: Добавить проверку на Null
+
 def getProjectID(project_name):
     sql = "SELECT id FROM Projects_t WHERE project_name = '{0}'".format(project_name)
     for ans in cursor.execute(sql):
