@@ -1,11 +1,12 @@
 # -*- coding: utf8 -*-
+import os
 import sys
 import sqlite3
 from forms.ProjectForm import Ui_MainWindow
 from PyQt5 import QtWidgets
 from database import projects_api
 import time as t
-from System import System
+from System import System, SystemApp
 
 answer = None
 conn = sqlite3.connect("D:\Code\Git\maiSpecificationMaker\Specifications.sqlite")
@@ -39,12 +40,23 @@ class ProjectApp(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def on_clicked_create(self):
         if(self.currentProjectName is None or self.currentProjectName == ""):
-            self.Error_lable.setText("Error")
+            buttonReply = QtWidgets.QMessageBox.critical(self, 'Project error',
+                                                         "Введите название проекта для добавления",
+                                                         QtWidgets.QMessageBox.Ok)
+
         else:
             db_ans = projects_api.addProject(self.currentProjectName)
-            self.Error_lable.setText(db_ans)
+            if(db_ans == 0):
+                self.loadData()
+                buttonReply = QtWidgets.QMessageBox.information(self, 'Project',
+                                                             "Проект добавлен: "+ str(self.currentProjectName),QtWidgets.QMessageBox.Ok)
+
+            else:
+                buttonReply = QtWidgets.QMessageBox.critical(self, 'Project error',
+                                                             db_ans,
+                                                             QtWidgets.QMessageBox.Ok)
+
             t.sleep(1)
-            self.close()
 
     def on_clicked_back(self):
         global answer
@@ -53,17 +65,16 @@ class ProjectApp(QtWidgets.QMainWindow, Ui_MainWindow):
 
 
     def on_clicked_ok(self):
-        #if self.Index is not None:
-            #self.close()
-            #System(self.Index)
-        ##else:
-            #print("error")
         if self.Index is not None:
-            global answer
-            answer = self.Index
-            self.close()
+            self.close()                                        #закрываем окно
+            os.system("python System.py " + str(self.Index))    #вызываем следующее (КОСТЫЛЬ)
         else:
-            print("error")
+            buttonReply = QtWidgets.QMessageBox.critical(self, 'Project error', "Необходимо выбрать проект для продолжения",
+                                               QtWidgets.QMessageBox.Ok)
+            #print(int(buttonReply))
+            #if buttonReply == QtWidgets.QMessageBox.Ok:
+               # print('Yes clicked.')
+
 
     def onTextProjectName(self, text):
         self.textProjectName.append(text)
@@ -87,20 +98,12 @@ def Project():
     window.show()  # Показываем окно
     app.exec_()  # и запускаем приложение
     window.close()
-    #if answer == "back":
-        #return(answer)
-    #else:
-
-    rez = System(answer)
-
-    print("System answer " + str(rez))
     app.quit()
-    return rez
 
 
 
 def main():
-    print(Project())
+    Project()
 
 if __name__ == "__main__":
    main()

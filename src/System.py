@@ -1,16 +1,17 @@
 # -*- coding: utf8 -*-
+import os
 import sys
 import sqlite3
-from forms.SystemForm import Ui_MainWindow
+from forms.SystemForm import Ui_System
 from PyQt5 import QtWidgets
 from database import systems_api
-from Product import Product
+from Product import Product, ProductApp
 
 conn = sqlite3.connect("D:\Code\Git\maiSpecificationMaker\Specifications.sqlite")
 cursor = conn.cursor()
 answer = None
 
-class SystemApp(QtWidgets.QMainWindow, Ui_MainWindow):
+class SystemApp(QtWidgets.QMainWindow, Ui_System):
     Index = None
     def __init__(self, Project_id = None):
         super().__init__()
@@ -27,11 +28,12 @@ class SystemApp(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def on_clicked_ok(self):
         if self.Index is not None:
-            global answer
-            answer = self.Index
-            self.close()
+            self.close()  # закрываем окно
+            os.system("python Product.py " + str(self.Index))  # вызываем следующее (КОСТЫЛЬ)
         else:
-            print("error")
+            buttonReply = QtWidgets.QMessageBox.critical(self, 'System error',
+                                                         "Необходимо выбрать систему для продолжения",
+                                                         QtWidgets.QMessageBox.Ok)
 
     def on_clicked_back(self):
         global answer
@@ -57,20 +59,24 @@ class SystemApp(QtWidgets.QMainWindow, Ui_MainWindow):
         return (self.table.item(index_row, index_column).text())
 
 def System(ProjectIndex = None):
-    print("systemstart" + str(ProjectIndex))
+
+    #print("systemstart" + str(ProjectIndex))
     app = QtWidgets.QApplication(sys.argv)  # Новый экземпляр QApplication
     window = SystemApp(ProjectIndex)  # Создаём объект класса FirstWindowApp
     window.show()  # Показываем окно
     app.exec_()  # и запускаем приложение
     if answer == "back":
-        window.close()
-        app.quit()
-        return answer
-    else:
-        Product(answer)
+        os.system("python Project.py")
+        #window.close()
+        #app.quit()
+        #return answer
 
-def main():
-    System()
+
+def main(arg = None):
+    System(arg)
 
 if __name__ == "__main__":
-   main()
+    if len(sys.argv) > 1:
+        main(sys.argv[1])
+    else:
+        main()

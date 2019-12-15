@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTableWidget" name="table">
+   <widget class="QTableWidget" name="Table">
     <property name="geometry">
      <rect>
       <x>40</x>
@@ -85,7 +85,7 @@
      </property>
     </column>
    </widget>
-   <widget class="QPushButton" name="LoadDB_but">
+   <widget class="QPushButton" name="LoadDB_Button">
     <property name="geometry">
      <rect>
       <x>40</x>
@@ -98,7 +98,7 @@
      <string>Load DB</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="Search_but">
+   <widget class="QPushButton" name="Search_Button">
     <property name="geometry">
      <rect>
       <x>220</x>
@@ -111,7 +111,7 @@
      <string>Search</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="Add_but">
+   <widget class="QPushButton" name="Add_Button">
     <property name="geometry">
      <rect>
       <x>660</x>
@@ -124,7 +124,7 @@
      <string>ADD</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="Delete_but">
+   <widget class="QPushButton" name="Delete_Button">
     <property name="geometry">
      <rect>
       <x>520</x>
@@ -137,7 +137,7 @@
      <string>DELETE</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="Update_but">
+   <widget class="QPushButton" name="Update_Button">
     <property name="geometry">
      <rect>
       <x>760</x>
@@ -150,7 +150,7 @@
      <string>UPDATE</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="ID_t">
+   <widget class="QLineEdit" name="ID_Text">
     <property name="geometry">
      <rect>
       <x>480</x>
@@ -160,7 +160,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QLabel" name="id_l">
+   <widget class="QLabel" name="ID_Label">
     <property name="geometry">
      <rect>
       <x>460</x>
@@ -173,7 +173,7 @@
      <string>ID</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="Back_but">
+   <widget class="QPushButton" name="Back_Button">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -184,6 +184,61 @@
     </property>
     <property name="text">
      <string>Back</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Project_Lable">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>20</y>
+      <width>251</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Calibri</family>
+      <pointsize>20</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Project: Самолёт</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="System_Label">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>20</y>
+      <width>251</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Calibri</family>
+      <pointsize>20</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>System: Фюзеляж</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Print_Button">
+    <property name="geometry">
+     <rect>
+      <x>800</x>
+      <y>560</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PRINT</string>
     </property>
    </widget>
   </widget>

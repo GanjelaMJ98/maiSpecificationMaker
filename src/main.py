@@ -11,11 +11,7 @@ def main():
     print("Start")
     name, status = authentication(test = 1)
     print("User: " + str(name) + " with status " +str(status))
-    while(1):
-        rez = Project()
-        print("Project answer = " + str(rez))
-        if rez == "stop":
-            break
+    Project()
 
 
 if __name__ == "__main__":

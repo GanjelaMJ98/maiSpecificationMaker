@@ -25,7 +25,7 @@ def addProject(project_name):
         cursor.execute("INSERT INTO Projects_t VALUES (NULL,?) ", [project_name] )
         print("Added project ", project_name)
         conn.commit()
-        return "Added project "+ project_name
+        return 0
     else:
         print("Project already exists")
         conn.commit()

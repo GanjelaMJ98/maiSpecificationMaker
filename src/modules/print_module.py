@@ -35,3 +35,4 @@ def print_specification(project_name, system_name, table_product, path = None):
         document.save(path)
     else:
         document.save('demo1.docx')
+    return 0
