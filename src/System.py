@@ -15,6 +15,7 @@ class SystemApp(QtWidgets.QMainWindow, Ui_System):
     Index = None
     def __init__(self, Project_id = None):
         super().__init__()
+        self.Project_ID = Project_id
         self.setupUi(self)
         self.AddButton.clicked.connect(self.on_clicked_add)
         self.BackButton.clicked.connect(self.on_clicked_back)
@@ -25,6 +26,8 @@ class SystemApp(QtWidgets.QMainWindow, Ui_System):
 
     def on_clicked_add(self):
         self.close()
+        os.system("python AddSystem.py " + str(self.Project_ID))
+
 
     def on_clicked_ok(self):
         if self.Index is not None:

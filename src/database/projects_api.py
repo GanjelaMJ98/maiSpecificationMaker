@@ -38,10 +38,12 @@ def updateProject(project_id, project_name):
     conn.commit()
     return 0
 
-def loadProjects(name = None):
+def loadProjects(name = None, id = None):
     list = []
     if name is not None:
         sql = "SELECT * FROM Projects_t WHERE project_name ='{0}'".format(name)
+    elif id is not None:
+        sql = "SELECT * FROM Projects_t WHERE id ='{0}'".format(id)
     else:
         sql = "SELECT * FROM Projects_t"
     #for row in cursor.execute(sql):
