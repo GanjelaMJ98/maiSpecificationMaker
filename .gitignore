@@ -3,4 +3,7 @@ Specifications.sqlite
 /src/__pycache__/
 /src/modules/__pycache__/
 /src/forms/__pycache__/
+/src/modules/__pycache__/
+/src/demo1.docx
+
 .idea/

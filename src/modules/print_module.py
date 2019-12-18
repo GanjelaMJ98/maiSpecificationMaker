@@ -35,5 +35,5 @@ def print_specification(project_name, system_name, table_product, sum,path = Non
     if path is not None:
         document.save(path)
     else:
-        document.save('demo1.docx')
+        document.save('demo.docx')
     return 0

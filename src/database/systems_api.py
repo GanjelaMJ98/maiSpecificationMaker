@@ -1,8 +1,8 @@
 import sqlite3
 from .projects_api import addProject, getProjectID
+from config import database_path
 
-
-conn = sqlite3.connect("D:\Code\Git\maiSpecificationMaker\Specifications.sqlite")
+conn = sqlite3.connect(database_path)
 cursor = conn.cursor()
 
 def getSystemName(system_id):

@@ -82,7 +82,8 @@ class AuthenticationApp(App):
                     log.write(str(t.ctime(t.time())) + "\tLog: {0:<15} Pass: {1:<15} {2:10}\n".format(self.login,self.password,status))
                     user_name = self.login
                     user_status = status
-                    AuthenticationApp().stop()
+                    self.stop()
+                    App.get_running_app().stop()
                 else:                               # Пользователь не найден TODO: Уведомление "User not found"
                     self.info.text = "Error"
                     log.write(str(t.ctime(t.time())) + "\tLog: {0:<15} Pass: {1:<15} {2:10}\n".format(self.login, self.password,"ERROR"))

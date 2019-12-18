@@ -9,7 +9,7 @@ from System import System
 
 def main():
     print("Start")
-    name, status = authentication(test = 1)
+    name, status = authentication()
     print("User: " + str(name) + " with status " +str(status))
     Project()
 

@@ -1,7 +1,7 @@
 # -*- coding: utf8 -*-
 import sqlite3
-
-conn = sqlite3.connect("D:\Code\Git\maiSpecificationMaker\Specifications.sqlite")
+from config import database_path
+conn = sqlite3.connect(database_path)
 cursor = conn.cursor()
 
 def getProjectName(project_id):
