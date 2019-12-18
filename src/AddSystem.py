@@ -7,9 +7,10 @@ from forms.AddSystemForm import Ui_MainWindow
 from PyQt5 import QtWidgets
 from database import systems_api
 from database import projects_api
+from config import database_path, compiler
 
 
-conn = sqlite3.connect("D:\Code\Git\maiSpecificationMaker\Specifications.sqlite")
+conn = sqlite3.connect(database_path)
 cursor = conn.cursor()
 answer = None
 
@@ -52,7 +53,8 @@ class AddSystemApp(QtWidgets.QMainWindow, Ui_MainWindow):
                 buttonReply = QtWidgets.QMessageBox.information(self, 'System error',
                                                              "Added system",
                                                              QtWidgets.QMessageBox.Ok)
-        os.system("python System.py " + str(self.Project_ID))
+        self.close()
+        os.system(compiler + "System.py " + str(self.Project_ID))
 
 
 
@@ -67,6 +69,7 @@ class AddSystemApp(QtWidgets.QMainWindow, Ui_MainWindow):
         for project in self.projects_list:
             self.Project_Box.addItem(project)
             self.currentProject = project
+            self.TextUpdateProject(project)
         self.Project_Box.activated[str].connect(self.TextUpdateProject)
 
     def TextUpdateProject(self, text):
@@ -83,7 +86,7 @@ def AddSystem(ProjectIndex = None):
     window.show()  # Показываем окно
     app.exec_()  # и запускаем приложение
     if answer == "back":
-        os.system("python Project.py")
+        os.system(compiler + "Project.py")
         #window.close()
         #app.quit()
         #return answer

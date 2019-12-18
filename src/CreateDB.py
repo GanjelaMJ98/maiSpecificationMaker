@@ -1,7 +1,7 @@
 # -*- coding: utf8 -*-
 import sqlite3
-
-conn = sqlite3.connect("D:\Code\Git\maiSpecificationMaker\Specifications.sqlite")
+from config import database_path, compiler
+conn = sqlite3.connect(database_path)
 cursor = conn.cursor()
 
 
@@ -52,13 +52,13 @@ cursor.execute("INSERT INTO Systems_t VALUES (NULL,'Шаси','1')")
 cursor.execute("INSERT INTO Systems_t VALUES (NULL,'Система управления','1')")
 cursor.execute("INSERT INTO Systems_t VALUES (NULL,'Силовая установка','1')")
 cursor.execute("INSERT INTO Systems_t VALUES (NULL,'Бортовое оборудование','1')")
-cursor.execute("INSERT INTO Products_t VALUES (NULL,'Кабина','100','10','t_contr','t_fab','t_cur','t_del')")
-cursor.execute("INSERT INTO Products_t VALUES (NULL,'Топливный бак','100','10','t_contr','t_fab','t_cur','t_del')")
-cursor.execute("INSERT INTO Products_t VALUES (NULL,'Багажный отсек','100','10','t_contr','t_fab','t_cur','t_del')")
-cursor.execute("INSERT INTO Products_t VALUES (NULL,'Кресло','100','10','t_contr','t_fab','t_cur','t_del')")
-cursor.execute("INSERT INTO Products_t VALUES (NULL,'Полка','100','10','t_contr','t_fab','t_cur','t_del')")
-cursor.execute("INSERT INTO Products_t VALUES (NULL,'Багажный отсек','100','10','t_contr','t_fab','t_cur','t_del')")
-cursor.execute("INSERT INTO Products_t VALUES (NULL,'Крепление','100','10','t_contr','t_fab','t_cur','t_del')")
+cursor.execute("INSERT INTO Products_t VALUES (NULL,'Кабина','1','10','t_contr','t_fab','t_cur','t_del')")
+cursor.execute("INSERT INTO Products_t VALUES (NULL,'Топливный бак','10','10','t_contr','t_fab','t_cur','t_del')")
+cursor.execute("INSERT INTO Products_t VALUES (NULL,'Багажный отсек','1000','10','t_contr','t_fab','t_cur','t_del')")
+cursor.execute("INSERT INTO Products_t VALUES (NULL,'Кресло','15','10','t_contr','t_fab','t_cur','t_del')")
+cursor.execute("INSERT INTO Products_t VALUES (NULL,'Полка','102','10','t_contr','t_fab','t_cur','t_del')")
+cursor.execute("INSERT INTO Products_t VALUES (NULL,'Багажный отсек','1010','10','t_contr','t_fab','t_cur','t_del')")
+cursor.execute("INSERT INTO Products_t VALUES (NULL,'Крепление','1080','10','t_contr','t_fab','t_cur','t_del')")
 cursor.execute("INSERT INTO Subsystems_t VALUES (NULL,'1','5','1')")
 cursor.execute("INSERT INTO Subsystems_t VALUES (NULL,'2','6','1')")
 cursor.execute("INSERT INTO Subsystems_t VALUES (NULL,'3','4','1')")

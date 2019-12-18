@@ -3,7 +3,7 @@ from docx.shared import Inches
 
 
 
-def print_specification(project_name, system_name, table_product, path = None):
+def print_specification(project_name, system_name, table_product, sum,path = None):
     document = Document()
     document.add_heading('Specification', 0)
     p = document.add_paragraph('Project: ')
@@ -30,6 +30,7 @@ def print_specification(project_name, system_name, table_product, path = None):
         row_cells[5].text = str(f)
         row_cells[6].text = str(g)
         row_cells[7].text = str(h)
+    p = document.add_paragraph('Sum: ' + str(sum))
     document.add_page_break()
     if path is not None:
         document.save(path)

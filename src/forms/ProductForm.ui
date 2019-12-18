@@ -176,8 +176,8 @@
    <widget class="QPushButton" name="Back_Button">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>560</y>
+      <x>710</x>
+      <y>570</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -239,6 +239,77 @@
     </property>
     <property name="text">
      <string>PRINT</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Code_Button">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>570</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Code</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Number_Button">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>570</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Number</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Price_Button">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>570</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Price</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Sort_Label">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>550</y>
+      <width>47</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Sort by</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Sum_Label">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>545</y>
+      <width>161</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI</family>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
     </property>
    </widget>
   </widget>

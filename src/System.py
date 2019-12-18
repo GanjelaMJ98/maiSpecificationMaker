@@ -5,9 +5,10 @@ import sqlite3
 from forms.SystemForm import Ui_System
 from PyQt5 import QtWidgets
 from database import systems_api
+from config import database_path, compiler
 from Product import Product, ProductApp
 
-conn = sqlite3.connect("D:\Code\Git\maiSpecificationMaker\Specifications.sqlite")
+conn = sqlite3.connect(database_path)
 cursor = conn.cursor()
 answer = None
 
@@ -26,13 +27,13 @@ class SystemApp(QtWidgets.QMainWindow, Ui_System):
 
     def on_clicked_add(self):
         self.close()
-        os.system("python AddSystem.py " + str(self.Project_ID))
+        os.system(compiler + "AddSystem.py " + str(self.Project_ID))
 
 
     def on_clicked_ok(self):
         if self.Index is not None:
             self.close()  # закрываем окно
-            os.system("python Product.py " + str(self.Index))  # вызываем следующее (КОСТЫЛЬ)
+            os.system(compiler + "Product.py " + str(self.Index))  # вызываем следующее (КОСТЫЛЬ)
         else:
             buttonReply = QtWidgets.QMessageBox.critical(self, 'System error',
                                                          "Необходимо выбрать систему для продолжения",
@@ -69,7 +70,7 @@ def System(ProjectIndex = None):
     window.show()  # Показываем окно
     app.exec_()  # и запускаем приложение
     if answer == "back":
-        os.system("python Project.py")
+        os.system(compiler + "Project.py")
         #window.close()
         #app.quit()
         #return answer

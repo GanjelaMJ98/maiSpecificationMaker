@@ -6,10 +6,12 @@ from forms.ProjectForm import Ui_MainWindow
 from PyQt5 import QtWidgets
 from database import projects_api
 import time as t
+from config import database_path, compiler
 from System import System, SystemApp
 
 answer = None
-conn = sqlite3.connect("D:\Code\Git\maiSpecificationMaker\Specifications.sqlite")
+#conn = sqlite3.connect("D:\Code\Git\maiSpecificationMaker\Specifications.sqlite")
+conn = sqlite3.connect(database_path)
 cursor = conn.cursor()
 
 
@@ -67,7 +69,7 @@ class ProjectApp(QtWidgets.QMainWindow, Ui_MainWindow):
     def on_clicked_ok(self):
         if self.Index is not None:
             self.close()                                        #закрываем окно
-            os.system("python System.py " + str(self.Index))    #вызываем следующее (КОСТЫЛЬ)
+            os.system(compiler +"System.py " + str(self.Index))    #вызываем следующее (КОСТЫЛЬ)
         else:
             buttonReply = QtWidgets.QMessageBox.critical(self, 'Project error', "Необходимо выбрать проект для продолжения",
                                                QtWidgets.QMessageBox.Ok)
